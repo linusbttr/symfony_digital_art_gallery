@@ -1,0 +1,25 @@
+/* Header links oben fixieren */
+.header {
+    display: flex;         /* Logo + Titel nebeneinander */
+    align-items: center;   /* Vertikal zentrieren */
+    gap: 15px;             /* Abstand zwischen Logo und Text */
+    position: absolute;    /* Fixiert oben links */
+    top: 20px;             /* Abstand vom oberen Rand */
+    left: 20px;            /* Abstand vom linken Rand */
+    background: rgba(255, 255, 255, 0.7); /* Optional leicht transparent für Kontrast */
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* Schöner Schatten */
+}
+
+.logo {
+    width: 60px;           /* Logo Größe */
+    height: auto;
+}
+
+.title {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
