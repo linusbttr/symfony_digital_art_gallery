@@ -10,14 +10,14 @@
 		<th>Image</th>
 	</tr>
 	{% for artwork in artworks %}
-		<tr>
-			<td>
-				<a href="{{ path('idArtwork', { id: artwork.id }) }}">{{ artwork.title }}</a>
-			</td>
-			<td>{{ artwork.artistName }}</td>
-			<td>{{ artwork.creationDate }}</td>
-			<td>{{ artwork.description }}</td>
-			<td><img src="{{ artwork.imagePath }}" alt="{{ artwork.title }}" width="300"></td>
-		</tr>
+	<tr>
+    	<td>
+        	<a href="{{ path('idArtwork', { id: artwork.id }) }}">{{ artwork.title }}</a>
+    	</td>
+    	<td>{{ artwork.artist.name }}</td>
+    	<td>{{ artwork.creationDate|date('Y-m-d') }}</td>
+    	<td>{{ artwork.description }}</td>
+    	<td><img src="{{ artwork.imageUrl }}" alt="{{ artwork.title }}" width="300"></td>
+	</tr>
 	{% endfor %}
 </table>

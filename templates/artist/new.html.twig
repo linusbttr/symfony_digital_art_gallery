@@ -1,0 +1,28 @@
+<style>
+    body {
+        font-family: sans-serif;
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 0 20px;
+        background: #f5f5f5;
+    }
+    h1 { color: #333; }
+    form div { margin-bottom: 15px; }
+    label { display: block; font-weight: bold; margin-bottom: 5px; color: #555; }
+    input, textarea, select { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+    button { background: #333; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #555; }
+    a { display: inline-block; margin-top: 15px; color: #333; }
+</style>
+
+<h1>Add New Artist</h1>
+
+{{ form_start(form) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.biography) }}
+    {{ form_row(form.birthDate) }}
+    {{ form_row(form.nationality) }}
+    <button type="submit">Save Artist</button>
+{{ form_end(form) }}
+
+<a href="{{ path('newArtwork') }}">Back to Add Artwork</a>

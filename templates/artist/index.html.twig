@@ -1,0 +1,15 @@
+<style>
+    body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f5f5f5; }
+    h1 { color: #333; }
+    .artist-card { background: white; padding: 20px; margin-bottom: 15px; border-radius: 4px; }
+    a { color: #333; }
+</style>
+
+<h1>Artists</h1>
+{% for artist in artists %}
+    <div class="artist-card">
+        <h2><a href="{{ path('artistProfile', {id: artist.id}) }}">{{ artist.name }}</a></h2>
+        <p>{{ artist.nationality }}</p>
+        <p>{{ artist.biography }}</p>
+    </div>
+{% endfor %}

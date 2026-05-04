@@ -13,11 +13,11 @@
 			</tr>
 			<tr>
 				<th>Artist</th>
-				<td>{{ artwork.artistName }}</td>
+				<td>{{ artwork.artist.name }}</td>
 			</tr>
 			<tr>
 				<th>Creation Date</th>
-				<td>{{ artwork.creationDate }}</td>
+				<td>{{ artwork.creationDate|date('Y-m-d') }}</td>
 			</tr>
 			<tr>
 				<th>Description</th>
@@ -25,12 +25,12 @@
 			</tr>
 			<tr>
 				<th>Image</th>
-				<td>
-					<img src="{{ artwork.imagePath }}" alt="{{ artwork.title }}" width="300">
-				</td>
+				<td><img src="{{ artwork.imageUrl }}" alt="{{ artwork.title }}" width="300"></td>
 			</tr>
 		</table>
 		<a href="{{ path('allArtworks') }}">All Artworks</a>
 		<a href="{{ path('home') }}">Home</a>
+		<a href="{{ path('editArtwork', {id: artwork.id}) }}">Edit Artwork</a>
+		<a href="{{ path('deleteArtwork', {id: artwork.id}) }}">Delete Artwork</a>
 	</body>
 </html>

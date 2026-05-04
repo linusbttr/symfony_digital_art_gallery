@@ -1,0 +1,20 @@
+<style>
+    body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; background: #f5f5f5; }
+    h1 { color: #333; }
+    img { width: 200px; margin: 20px 0; display: block; }
+    .buttons { display: flex; gap: 10px; margin-top: 20px; }
+    button { background: #cc0000; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #ff0000; }
+    a { padding: 10px; background: #333; color: white; text-decoration: none; border-radius: 4px; }
+</style>
+
+<h1>Delete Artwork</h1>
+<p>Are you sure you want to delete <strong>{{ artwork.title }}</strong>?</p>
+<img src="{{ artwork.imageUrl }}" alt="{{ artwork.title }}">
+
+<div class="buttons">
+    <form method="post" action="{{ path('deleteArtwork', {id: artwork.id}) }}">
+        <button type="submit">Yes, Delete</button>
+    </form>
+    <a href="{{ path('allArtworks') }}">Cancel</a>
+</div>

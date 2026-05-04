@@ -1,0 +1,19 @@
+<style>
+    body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f5f5f5; }
+    h1 { color: #333; }
+    .tour-card { background: white; padding: 20px; margin-bottom: 15px; border-radius: 4px; }
+    a { color: #333; }
+</style>
+
+<h1>Virtual Tours</h1>
+{% for tour in tours %}
+    <div class="tour-card">
+        <h2><a href="{{ path('tourDetail', {id: tour.id}) }}">{{ tour.name }}</a></h2>
+        <p>{{ tour.description }}</p>
+        <p>{{ tour.artworks|length }} artworks</p>
+    </div>
+{% else %}
+    <p>No tours available yet.</p>
+{% endfor %}
+
+<a href="{{ path('allArtworks') }}">Back to Gallery</a>
